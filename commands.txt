@@ -1,0 +1,1 @@
+ln -sf build/compile_commands.json
