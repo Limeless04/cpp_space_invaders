@@ -1,5 +1,6 @@
 #pragma once
 #include "alien.hpp"
+#include "mysteryship.hpp"
 #include "obstacle.hpp"
 #include "spaceship.hpp"
 #include <raylib.h>
@@ -27,4 +28,7 @@ private:
   std::vector<Bullet> alienBullets;
   constexpr static float alienBulletInterval = 0.35;
   float timeLastAlienFired;
+  MysteryShip mysteryship;
+  float mysterySpawnInterval;
+  float mysteryshipTimeLastSpawned;
 };

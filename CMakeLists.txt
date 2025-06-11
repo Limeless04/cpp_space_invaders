@@ -20,6 +20,7 @@ add_executable(${PROJECT_NAME}
     src/block.cpp
     src/obstacle.cpp
     src/alien.cpp
+    src/mysteryship.cpp
     # Add other .cpp files here
 )
 
