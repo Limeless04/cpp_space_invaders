@@ -10,6 +10,7 @@ public:
   static Texture2D alienImages[3];
   static void UnloadImage();
 
+  Rectangle getRect();
   void Update(int direction);
   void Draw();
   int GetType();

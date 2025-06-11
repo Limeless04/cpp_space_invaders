@@ -7,6 +7,7 @@ public:
   void Update();
   void Draw();
   bool isActive;
+  Rectangle getRect();
 
 private:
   Vector2 position;

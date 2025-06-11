@@ -1,5 +1,6 @@
 #include "mysteryship.hpp"
 #include <raylib.h>
+#include <type_traits>
 
 MysteryShip::MysteryShip() {
   image = LoadTexture("assets/graphics/mystery.png");
@@ -12,10 +13,10 @@ void MysteryShip::Spawn() {
   position.y = 90;
   int side = GetRandomValue(0, 1);
   if (side == 0) {
-    position.x = 0;
+    position.x = 25;
     speed = 3;
   } else {
-    position.x = GetScreenWidth() - image.width;
+    position.x = GetScreenWidth() - image.width - 25;
     speed = -3;
   }
 
@@ -25,7 +26,7 @@ void MysteryShip::Spawn() {
 void MysteryShip::Update() {
   if (alive) {
     position.x += speed;
-    if (position.x > GetScreenWidth() - image.width || position.x < 0) {
+    if (position.x > GetScreenWidth() - image.width - 25 || position.x < 25) {
       alive = false;
     }
   }
@@ -34,5 +35,13 @@ void MysteryShip::Update() {
 void MysteryShip::Draw() {
   if (alive) {
     DrawTextureV(image, position, WHITE);
+  }
+}
+
+Rectangle MysteryShip::getRect() {
+  if (alive) {
+    return {position.x, position.y, float(image.width), float(image.height)};
+  } else {
+    return {position.x, position.y, 0.0, 0.0};
   }
 }

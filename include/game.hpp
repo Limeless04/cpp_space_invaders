@@ -13,6 +13,12 @@ public:
   void Update();
   void Draw();
   void HandleInput();
+  bool run;
+  int score;
+  int highscore;
+  int lives;
+  int levels;
+  Music music;
 
 private:
   void DeleteInactiveBullet();
@@ -21,6 +27,14 @@ private:
   void MoveAlien();
   void MoveDownAlien(int distance);
   void AlienShoot();
+  void CheckCollision();
+  void GameOver();
+  void Reset();
+  void InitGame();
+  void checkHighScore();
+  void saveHighScore(int highscore);
+  int loadHighScore();
+  void checkAndAdvanceLevel();
   Spaceship spaceship;
   std::vector<Obstacle> obstacles;
   std::vector<Alien> aliens;
@@ -31,4 +45,5 @@ private:
   MysteryShip mysteryship;
   float mysterySpawnInterval;
   float mysteryshipTimeLastSpawned;
+  Sound explosionSound;
 };

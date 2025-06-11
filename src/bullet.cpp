@@ -16,8 +16,17 @@ void Bullet::Draw() {
 void Bullet::Update() {
   position.y += speed;
   if (isActive) {
-    if (position.y > GetScreenHeight() || position.y < 0) {
+    if (position.y > GetScreenHeight() - 100 || position.y < 25) {
       isActive = false;
     }
   }
+}
+
+Rectangle Bullet::getRect() {
+  Rectangle rect;
+  rect.x = position.x;
+  rect.y = position.y;
+  rect.width = 4;
+  rect.height = 15;
+  return rect;
 }
