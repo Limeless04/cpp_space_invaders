@@ -18,7 +18,6 @@ void Bullet::Update() {
   if (isActive) {
     if (position.y > GetScreenHeight() || position.y < 0) {
       isActive = false;
-      std::cout << "Laser inactive" << std::endl;
     }
   }
 }

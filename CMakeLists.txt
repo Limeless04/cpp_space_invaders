@@ -17,6 +17,9 @@ add_executable(${PROJECT_NAME}
     src/spaceship.cpp
     src/game.cpp
     src/bullet.cpp
+    src/block.cpp
+    src/obstacle.cpp
+    src/alien.cpp
     # Add other .cpp files here
 )
 
